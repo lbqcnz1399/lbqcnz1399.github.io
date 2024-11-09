@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<title>Liang Baiqi in Women's Clothing</title>
+<html>
+
+<body>
+
+  <h2>World-class top idol Liang Baiqi lost a dare with Liao Yucheng and now has to accept the punishment of wearing women's clothing that you choose for him.</h2>
+  <p>You can dress him in the following outfits:</p>
+  <ul>
+    <li>1. Barbie doll-style dress</li>
+    <li>2. Pink dress</li>
+    <li>3. Casual outfit (will not trigger random events)</li>
+    <li>4. School uniform (will not trigger random events)</li>
+    <li>5. Wearing winter and summer school uniforms together (adds 5 points)</li>
+  </ul>
+  <input type="text" id="choiceInput">
+  <button onclick="playGame()">Choose Outfit</button>
+  <div id="result"></div>
+  <div id="scoreDisplay">Score: 0</div>
+
+  <script>
+    let score = 0;
+
+    function playGame() {
+      const choice = document.getElementById('choiceInput').value;
+      const resultDiv = document.getElementById('result');
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      if (choice === '1') {
+        resultDiv.innerHTML = "You put on the Barbie doll-style dress.";
+        const event = Math.floor(Math.random() * 4) + 1;
+        if (event === 1) {
+          score -= 5;
+          resultDiv.innerHTML += "Oops, Liang Baiqi was penalized for violating school rules (wearing strange clothing), his current score is: " + score;
+          resultDiv.innerHTML += "<br>Liang Baiqi thinks: This messed-up school rule, why is the cost of playing a game so high, I have to lose points.";
+        } else if (event === 2) {
+          resultDiv.innerHTML += "Liang Baiqi was laughed at by the boys in his class; they are teasing him.";
+          resultDiv.innerHTML += "<br>Liang Baiqi feels uncomfortable: Hmph, what are you laughing at? Don't go too far!";
+        } else if (event === 3) {
+          resultDiv.innerHTML += "A girl said Liang Baiqi is a pervert, so awkward.";
+          resultDiv.innerHTML += "<br>Liang Baiqi feels a bit wronged: I don’t want to be like this, it's all because of the dare.";
+        } else if (event === 4) {
+          score += 3;
+          resultDiv.innerHTML += "Someone said Liang Baiqi looks very pretty as a ‘girl’, but it feels a bit strange.";
+          resultDiv.innerHTML += "<br>Liang Baiqi secretly mutters: Pretty? What kind of compliment is this? But at least I can gain a few points. Current score: " + score;
+        }
+      } else if (choice === '2') {
+        resultDiv.innerHTML = "Liang Baiqi put on the pink dress.";
+        const event = Math.floor(Math.random() * 4) + 1;
+        if (event === 1) {
+          score -= 5;
+          resultDiv.innerHTML += "Oops, Liang Baiqi was penalized for violating school rules (wearing strange clothing), his current score is: " + score;
+          resultDiv.innerHTML += "<br>Liang Baiqi thinks: This school rule is really a trap; the cost of playing a game is so high.";
+        } else if (event === 2) {
+          resultDiv.innerHTML += "Liang Baiqi was laughed at by the boys in his class; they are teasing him.";
+          resultDiv.innerHTML += "<br>Liang Baiqi feels uncomfortable: Hmph, what are you laughing at? Don't go too far!";
+        } else if (event === 3) {
+          resultDiv.innerHTML += "A girl said Liang Baiqi is a pervert, so awkward.";
+          resultDiv.innerHTML += "<br>Liang Baiqi feels a bit wronged: I don’t want to be like this, it's all because of the dare.";
+        } else if (event === 4) {
+          score += 3;
+          resultDiv.innerHTML += "Someone said Liang Baiqi looks very pretty as a ‘girl’, but it feels a bit strange.";
+          resultDiv.innerHTML += "<br>Liang Baiqi secretly mutters: Pretty? What kind of compliment is this? But at least I can gain a few points. Current score: " + score;
+        }
+      } else if (choice === '3') {
+        resultDiv.innerHTML = "You chose a casual outfit, nothing particularly special happened.";
+        resultDiv.innerHTML += "<br>Liang Baiqi's score remains: " + score;
+      } else if (choice === '4') {
+        resultDiv.innerHTML = "You wore the school uniform, nothing particularly special happened.";
+        resultDiv.innerHTML += "<br>Liang Baiqi's score remains: " + score;
+      } else if (choice === '5') {
+        resultDiv.innerHTML = "Liang Baiqi wore the winter and summer school uniforms together, looking a bit strange.";
+        score += 5;
+        resultDiv.innerHTML += "Due to Liang Baiqi's creative outfit combination, he gained 5 points. Current score: " + score;
+      }
+      scoreDisplay.innerHTML = "Score: " + score;
+    }
+  </script>
+
+</body>
+
+</html>
